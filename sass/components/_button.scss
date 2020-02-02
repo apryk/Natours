@@ -1,4 +1,5 @@
 .btn {
+  &,
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -8,6 +9,9 @@
     border-radius: 100px;
     transition: all 0.2s;
     position: relative;
+    // Change for the <button> ::-webkit-progress-inner-element
+    border: none;
+    cursor: pointer;
   }
   &--white {
     background-color: $color-white;
@@ -33,8 +37,11 @@
       opacity: 0;
     }
   }
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }
   &::after {
     content: '';
